@@ -44,10 +44,10 @@
 			<td style="width: 50%" class="label tooltip">{{creature.birthlabel}}:<span class="tooltiptext">Time taken for {{creature.birthlabel}}</span></td>
 			<td>{{creature.birthtime | secondsToDateTime}}</td>
 		</tr>
-		<tr>
+		<!-- <tr>
 			<td style="width: 50%" class="label tooltip">Current Weight:<span class="tooltiptext">Amount of weight the creature can currently carry</span></td>
 			<td><input ng-model="creature.currentweight" ng-change="selectweight()" type="number" step="0.1" min="0" max="creature.finalweight">%</td>
-		</tr>
+		</tr> -->
 		<tr>
 			<td style="width: 50%" class="label tooltip">Maturation:<span class="tooltiptext">Maturation progress of creature you want stats for</span></td>
 			<td><input ng-model="creature.maturationprogress" ng-change="selectmaturation()" percentage type="number" step="0.01" min="0" max="100">%</td>
@@ -202,7 +202,7 @@
 		</tr>
 		<tr>
 			<td style="width: 50%" class="label tooltip">Current Weight:<span class="tooltiptext">Amount of weight the creature can currently carry.</span></td>
-			<td><input ng-model="creature.currentweight" ng-change="selectweight()" type="number" step="0.1" min="0" max="creature.finalweight">%</td>
+			<td><input ng-model="creature.currentweight" ng-change="selectweight()" type="number" step="0.1" min="0" max="creature.finalweight"></td>
 		</tr>
 		<tr>
 			<td style="width: 50%" class="label tooltip">Current Time left Till Imprint:<span class="tooltiptext">Time left till next imprint, shown in-game.</span></td>
@@ -232,7 +232,7 @@
 			<td>{{creature.imprintMissed | number:0}}</td>
 		</tr>
 		<tr>
-			<td colspan="2" style="width: 200px; text-align: center;" >Items below are a Work in progress.<br>Output may be unreliable!</td>
+			<td colspan="2" style="width: 200px; text-align: center;" >Items below may output unreliable data!</td>
 		</tr>
 		<!-- <tr>
 			<td style="width: 50%" class="label tooltip">Imprint Buffer Remaining Total:<span class="tooltiptext">Imprint progress for the given maturation progress.</span></td>
