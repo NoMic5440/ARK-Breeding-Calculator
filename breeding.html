@@ -162,6 +162,15 @@
 	</table>
   </div>
 
+	<div class="tableheader slide" ng-class="{'dimmed': !tablevisibility['ImprintCalcInstructions']}" ng-click="showhidetable('ImprintCalcInstructions')">Imprint Calc - Instructions</div>
+	<div class="tableslide" ng-show="tablevisibility['ImprintCalcInstructions']">
+	<table>
+		<tr>
+			<td colspan="2" style="width: 200px; text-align: center;" >For accurate estimations both max weight and current weight MUST be specified.<br>To get the exact weight, spoiled meat(wt:0.1) can be used.<br>For more precision, electronics(wt:0.01) can be used in combination with spoiled meat.</td>
+		</tr>
+	</table>
+	</div>
+
 	<div class="tableheader slide" ng-class="{'dimmed': !tablevisibility['ImprintCalc']}" ng-click="showhidetable('ImprintCalc')">Imprint Calc</div>
 	<div class="tableslide" ng-show="tablevisibility['ImprintCalc']">
 	<table>
@@ -192,10 +201,6 @@
 			<td style="width: 50%" class="label tooltip">Estimated time till next imprint:<span class="tooltiptext">time left till next imprint for given maturation.</span></td>
 			<td>{{creature.imprinttimetonext | secondsToDateTime}}</td>
 		</tr>
-		<tr>
-			<td colspan="2" style="width: 200px; text-align: center;" >For accurate estimations both max weight and current weight MUST be specified.<br>To get the exact weight, spoiled meat(wt:0.1) can be used.<br>For more precision, electronics(wt:0.01) can be used in combination with spoiled meat.</td>
-		</tr>
-
 		<tr>
 			<td style="width: 50%" class="label tooltip">Weight:<span class="tooltiptext">Maximum weight the creature can carry.</span></td>
 			<td><input ng-model="creature.finalweight" ng-change="selectweight()" type="number"></td>

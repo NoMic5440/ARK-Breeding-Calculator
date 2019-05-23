@@ -1303,8 +1303,8 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			"Food": true,
 			"Trough": true,
 			"TroughCreatures": true,
-			"ImprintCalc": true
-
+			"ImprintCalc": true,
+			"ImprintCalcInstructions": true
 		}
 	}
 
