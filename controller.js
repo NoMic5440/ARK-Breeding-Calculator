@@ -1441,9 +1441,30 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 		creature.maturationprogress=0;
 		creature.currentcapacity=0;
 		creature.currentweightactive=0;
-		creature.imprintactualtime="";
-		creature.imprintactualtimeold="";
 		$scope.foodunit=$scope.foodlists[creaturedata.type][0];
+
+		creature.imprintTotalraw=0;
+		creature.imprintTotal=0;
+		creature.imprintBuffertotal=0;
+		creature.imprintBuffer=0;
+		creature.imprintcurrent=0;
+		creature.imprintcurrenttrunc=0;
+		creature.imprintamount=0;
+		creature.imprintProgress=0;
+		creature.imprinttimetonext=0;
+		creature.imprintActualTime=0;
+		creature.imprintDifference=0;
+		creature.imprintDifferenceDisplay=0;
+		creature.imprintstofinish=0;
+		creature.imprintTimetofinish=0;
+		creature.imprintMissed=0;
+		creature.imprintBufferRemaningTotal=0;
+		creature.imprintBufferRemaning=0;
+		creature.imprintActualHours=7;
+		creature.imprintActualMinutes=59;
+		creature.imprintActualSeconds=59;
+		creature.imprintActualProgress=0;
+
 
 		$scope.statscalc();
 	}
