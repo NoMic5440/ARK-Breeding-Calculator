@@ -17,6 +17,9 @@
 		input {
 			width: 50px;
 		}
+		input[type=text] {
+			width: 65px;
+		}
 		input[type=button] {
 			width: auto;
 		}
@@ -153,7 +156,7 @@
 		    text-align: center;
 		    padding: 5px 0;
 		    border-radius: 6px;
-		 
+
 		    position: absolute;
 		    z-index: 1;
 

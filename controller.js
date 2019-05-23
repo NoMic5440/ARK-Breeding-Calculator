@@ -141,7 +141,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			eggspeedmult: 3.0,
 			weight: 380.0
 		},
-		
+
 		Anglerfish: {
 			birthtype: "Incubation",
 			type: "Carnivore",
@@ -154,7 +154,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			eggspeedmult: 1.0,
 			weight: 350
 		},
-		
+
 		Ankylosaurus: {
 			birthtype: "Incubation",
 			type: "Herbivore",
@@ -167,7 +167,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			eggspeedmult: 1.9,
 			weight: 250
 		},
-		
+
 		Archaeopteryx: {
 			birthtype: "Incubation",
 			type: "Archaeopteryx",
@@ -193,7 +193,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			eggspeedmult: 1.7,
 			weight: 400.0
 		},
-		
+
 		Baryonyx: {
 			birthtype: "Incubation",
 			type: "Piscivore",
@@ -206,7 +206,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			eggspeedmult: 2.5,
 			weight: 325.0
 		},
-		
+
 		Basilosaurus: {
 			birthtype: "Gestation",
 			type: "Carnivore",
@@ -219,7 +219,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			gestationspeedmult: 1.0,
 			weight: 700.0
 		},
-		
+
 		Beelzebufo: {
 			birthtype: "Gestation",
 			type: "Carnivore",
@@ -245,7 +245,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			eggspeedmult: 1.0,
 			weight: 900.0
 		},
-		
+
 		Bulbdog: {
 			birthtype: "Gestation",
 			type: "Omnivore",
@@ -297,7 +297,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			gestationspeedmult: 1.0,
 			weight: 300
 		},
-		
+
 		Chalicotherium: {
 			birthtype: "Gestation",
 			type: "Herbivore",
@@ -446,7 +446,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			gestationspeedmult: 1.6,
 			weight: 250.0
 		},
-		
+
 		Dunkleosteus: {
 			birthtype: "Gestation",
 			type: "Carnivore",
@@ -459,7 +459,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			gestationspeedmult: 1.0,
 			weight: 910.0
 		},
-		
+
 		Electrophorus: {
 			birthtype: "Gestation",
 			type: "Carnivore",
@@ -472,7 +472,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			gestationspeedmult: 1.0,
 			weight: 150.0
 		},
-		
+
 		Equus: {
 			birthtype: "Gestation",
 			type: "Herbivore",
@@ -485,7 +485,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			gestationspeedmult: 0.6,
 			weight: 350.0
 		},
-		
+
 		Featherlight: {
 			birthtype: "Incubation",
 			type: "Carnivore",
@@ -564,7 +564,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			gestationspeedmult: 1.2,
 			weight: 220.0
 		},
-		
+
 		Glowtail: {
 			birthtype: "Incubation",
 			type: "Carnivore",
@@ -577,7 +577,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			eggspeedmult: 2.0,
 			weight: 70.0
 		},
-		
+
 		Iguanodon: {
 			birthtype: "Incubation",
 			type: "Herbivore",
@@ -682,7 +682,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			gestationspeedmult: 1.0,
 			weight: 250.0
 		},
-		
+
 		Megalosaurus: {
 			birthtype: "Incubation",
 			type: "Carnivore",
@@ -695,7 +695,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			eggspeedmult: 3.0,
 			weight: 300.0
 		},
-		
+
 		Megatherium: {
 			birthtype: "Gestation",
 			type: "Omnivore",
@@ -708,7 +708,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			gestationspeedmult: 1.0,
 			weight: 725.0
 		},
-		
+
 		Mesopithecus: {
 			birthtype: "Gestation",
 			type: "Herbivore",
@@ -734,7 +734,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			eggspeedmult: 3.5,
 			weight: 45.0
 		},
-		
+
 		Morellatops: {
 			birthtype: "Incubation",
 			type: "Herbivore",
@@ -760,7 +760,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			gestationspeedmult: 1.0,
 			weight: 1300.0
 		},
-		
+
 		Moschops: {
 			birthtype: "Incubation",
 			type: "Omnivore",
@@ -825,7 +825,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			eggspeedmult: 3.5,
 			weight: 150.0
 		},
-		
+
 		Pachyrhinosaurus: {
 			birthtype: "Incubation",
 			type: "Herbivore",
@@ -864,7 +864,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			eggspeedmult: 3.5,
 			weight: 255.0
 		},
-		
+
 		Pegomastax: {
 			birthtype: "Incubation",
 			type: "Herbivore",
@@ -889,7 +889,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			eggspeed: 0.005556,
 			eggspeedmult: 3.0,
 			weight: 150
-		}, 
+		},
 
 		Phiomia: {
 			birthtype: "Gestation",
@@ -942,7 +942,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			eggspeedmult: 3.0,
 			weight: 150.0
 		},
-		
+
 		Purlovia: {
 			birthtype: "Gestation",
 			type: "Carnivore",
@@ -981,7 +981,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			eggspeedmult: 2.5,
 			weight: 140.0
 		},
-		
+
 		Ravager: {
 			birthtype: "Gestation",
 			type: "Carnivore",
@@ -1007,7 +1007,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			eggspeedmult: 1.0,
 			weight: 500
 		},
-		
+
 		"Roll Rat": {
 			birthtype: "Gestation",
 			type: "Herbivore",
@@ -1046,7 +1046,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			eggspeedmult: 2.0,
 			weight: 300.0
 		},
-		
+
 		Shinehorn: {
 			birthtype: "Gestation",
 			type: "Herbivore",
@@ -1065,7 +1065,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			birthtype: "Incubation",
 			type: "Carnivore",
 			basefoodrate: 0.01,
-			babyfoodrate: 25.5, 
+			babyfoodrate: 25.5,
 			extrababyfoodrate: 20,
 			agespeed: 0.000003,
 			agespeedmult: 1.7,
@@ -1138,7 +1138,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			eggspeedmult: 3.0,
 			weight: 365.0
 		},
-		
+
 		"Thorny Dragon": {
 			birthtype: "Incubation",
 			type: "Carnivore",
@@ -1177,7 +1177,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			eggspeedmult: 2.0,
 			weight: 365.0
 		},
-		
+
 		Troodon: {
 			birthtype: "Incubation",
 			type: "Carnivore",
@@ -1190,7 +1190,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			eggspeedmult: 4.4,
 			weight: 140.0
 		},
-		
+
 		Tusoteuthis: {
 			birthtype: "Incubation",
 			type: "Carnivore",
@@ -1217,7 +1217,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			eggspeedmult: 4.4,
 			weight: 461.5
 		},
-		
+
 		Vulture: {
 			birthtype: "Incubation",
 			type: "Carrion",
@@ -1243,7 +1243,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			gestationspeedmult: 2.0,
 			weight: 750.0
 		},
-		
+
 		Yutyrannus: {
 			birthtype: "Incubation",
 			type: "Carnivore",
@@ -1302,7 +1302,9 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			"Baby": true,
 			"Food": true,
 			"Trough": true,
-			"TroughCreatures": true
+			"TroughCreatures": true,
+			"ImprintCalc": true
+
 		}
 	}
 
@@ -1412,7 +1414,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 
 		if (creaturedata.birthtype=="Gestation") {
 			creature.birthtime=1/creaturedata.gestationspeed/creaturedata.gestationspeedmult/$scope.settings.hatchspeed;
-			creature.birthlabel="Gestation";		
+			creature.birthlabel="Gestation";
 		}
 
 		creature.finalweight=creaturedata.weight;
@@ -1437,6 +1439,10 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 		creature.currentweight=0;
 		creature.desiredbabybuffer=30;
 		creature.maturationprogress=0;
+		creature.currentcapacity=0;
+		creature.currentweightactive=0;
+		creature.imprintactualtime="";
+		creature.imprintactualtimeold="";
 		$scope.foodunit=$scope.foodlists[creaturedata.type][0];
 
 		$scope.statscalc();
@@ -1453,7 +1459,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 
 		if (creaturedata.birthtype=="Gestation") {
 			creature.birthtime=1/creaturedata.gestationspeed/creaturedata.gestationspeedmult/$scope.settings.hatchspeed;
-			creature.birthlabel="Gestation";		
+			creature.birthlabel="Gestation";
 		}
 
 		creature.maxfoodrate=creaturedata.basefoodrate*creaturedata.babyfoodrate*creaturedata.extrababyfoodrate*$scope.settings.consumptionspeed;
@@ -1466,12 +1472,12 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 	}
 
 	$scope.selectweight=function() {
-		//creature=$scope.creature;
-		//creaturedata=$scope.creatures[creature.name];
-		//creature.maturationprogress=creature.currentweight/creature.finalweight;
-
-		creature.finalweight=validatenumber(creature.finalweight, 1, 10000);
-
+		creature=$scope.creature;
+		creaturedata=$scope.creatures[creature.name];
+		if(creature.currentweight !=0){
+			creature.maturationprogress=creature.currentweight/creature.finalweight;
+			creature.currentweightactive=1;
+		}
 		$scope.finalbuffercalc();
 		$scope.selectmaturation();
 		$scope.desiredbuffercalc();
@@ -1486,7 +1492,10 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 		}
 		creature.maturationprogress=validatenumber(creature.maturationprogress, 0, 1);
 
-		creature.currentweight=creature.finalweight*creature.maturationprogress;
+		if (!creature.currentweightactive && creature.currentweight != creature.finalweight*creature.maturationprogress) {
+			creature.currentweight=creature.finalweight*creature.maturationprogress;
+		}
+		creature.currentweightactive=0;
 
 		$scope.maturationcalc();
 	}
@@ -1498,6 +1507,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 
 		$scope.totalfoodcalc();
 		$scope.babybuffercalc();
+		$scope.Imprintcalc();
 	}
 
 	$scope.totalfoodcalc=function() {
@@ -1561,7 +1571,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 
 		//Final Buffer Calc
 		creature.lasthandfeed=Math.max(0, creature.maturationtime*(creature.lasthandfeedmaturation-creature.maturationprogress));
-		
+
 		//Desired Buffer Calc
 		creature.timeuntildesiredbabybuffer=Math.max(0, creature.maturationtime*(creature.timeuntildesiredbabybuffermaturation-creature.maturationprogress));
 		//alert("Desired buffer "+$scope.iterations);
@@ -1806,7 +1816,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 				if (troughcreatures[i].foodrate<troughcreatures[i].minfoodrate) {
 					continue; //Creature is adult
 				}
-				
+
 				troughcreatures[i].foodrate-=troughcreatures[i].foodratedecay;
 				troughcreatures[i].hunger+=troughcreatures[i].foodrate;
 
@@ -1872,6 +1882,70 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 
 		return output;
 	}
+
+	// $scope.$watch('creature.imprintactualtime', function updatePdfUrl(creature.imprintactualtime, creature.imprintactualtimeold) {
+		// creature=$scope.creature;
+		// if (creature.imprintactualtime !== creature.imprintactualtimeold) {
+	    // console.log(creature.imprintactualtime);
+			// It's updated - Do something you want here.
+// }
+// });
+	_secondsToDateTime=function(seconds) {
+			var d = new Date(0,0,0,0,0,0,0);
+			d.setSeconds(seconds);
+			//return d;
+
+			days=d.getDate();
+
+			string=d.toTimeString().slice(0, 8);
+
+			if (days!=31) {
+				string=days+"d:"+string;
+			}
+
+			return string;
+	};
+
+	$scope.Imprintcalc=function() {
+		creature=$scope.creature;
+		creaturedata=$scope.creatures[creature.name];
+		creature.imprintTotalraw=(creature.maturationtime/3600)/8;
+		creature.imprintTotal=Math.trunc(creature.imprintTotalraw);
+		creature.imprintBuffertotal=(creature.imprintTotalraw%1)*8*60*60;
+		creature.imprintBuffer=creature.imprintBuffertotal/creature.imprintTotal
+		creature.imprintcurrent=creature.maturationtimecomplete/3600/8;
+		creature.imprintcurrenttrunc=Math.trunc(creature.maturationtimecomplete/3600/8);
+		creature.imprintamount=100/creature.imprintTotal;
+		creature.imprintProgress=Math.trunc(creature.imprintcurrent)*creature.imprintamount;
+		creature.imprinttimetonext=(1-((creature.maturationtimecomplete/28800)%1))*28800;
+		creature.imprintActualTime=(creature.imprintActualHours*3600)+(creature.imprintActualMinutes*60)+creature.imprintActualSeconds;
+		creature.imprintDifference=creature.imprinttimetonext-creature.imprintActualTime;
+		if(creature.imprintDifference<0){
+			creature.imprintDifferenceDisplay="-" + _secondsToDateTime((creature.imprintDifference*-1));
+		}
+		else{
+			creature.imprintDifferenceDisplay=_secondsToDateTime(creature.imprintDifference);
+		}
+		creature.imprintstofinish=Math.trunc((100-creature.imprintActualProgress)/creature.imprintamount);
+		creature.imprintTimetofinish=((creature.imprintstofinish-1)*28800)+creature.imprintActualTime;
+		if(creature.imprintTimetofinish > creature.maturationtimeremaining){
+			creature.imprintMissed=Math.ceil(((creature.maturationtimeremaining/28800)-(creature.imprintTimetofinish/28800))*-1);
+		}
+		else{
+			creature.imprintMissed=0;
+		}
+		creature.imprintBufferRemaningTotal=creature.imprintDifference+creature.imprintBuffertotal;
+		creature.imprintBufferRemaning=creature.imprintBufferRemaningTotal/creature.imprintstofinish;
+
+		// creature.tempvar=$scope.timeToSeconds("23:59:59");
+		// console.log(creature.imprintactualtime);
+		//console.log(creature.imprintBuffer);
+		// creature.maturationtimecomplete=creature.maturationtime*creature.maturationprogress;
+		// creature.maturationtimeremaining=creature.maturationtime-creature.maturationtimecomplete;
+		// creature.babytimeremaining=Math.max(0, creature.babytime-(creature.maturationtime*creature.maturationprogress));
+	}
+
+
 
 	$scope.switchcreature();
 	$scope.troughupdatefoodtypes();

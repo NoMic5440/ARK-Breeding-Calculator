@@ -1,6 +1,6 @@
 <div class="wrapperbox">
 <div class="box">
-	
+
 <form>
 	<h3>Crumplecorn's ARK Breeding Calculator</h3>
 	<p class="subheading">Hover over labels for tooltips</p>
@@ -45,8 +45,12 @@
 			<td>{{creature.birthtime | secondsToDateTime}}</td>
 		</tr>
 		<tr>
+			<td style="width: 50%" class="label tooltip">Current Weight:<span class="tooltiptext">Amount of weight the creature can currently carry</span></td>
+			<td><input ng-model="creature.currentweight" ng-change="selectweight()" type="number" step="0.1" min="0" max="creature.finalweight">%</td>
+		</tr>
+		<tr>
 			<td style="width: 50%" class="label tooltip">Maturation:<span class="tooltiptext">Maturation progress of creature you want stats for</span></td>
-			<td><input ng-model="creature.maturationprogress" ng-change="selectmaturation()" percentage type="number" step="0.1" min="0" max="100">%</td>
+			<td><input ng-model="creature.maturationprogress" ng-change="selectmaturation()" percentage type="number" step="0.01" min="0" max="100">%</td>
 		</tr>
 		<tr>
 			<td style="width: 50%" class="label tooltip">Elapsed Time:<span class="tooltiptext">Time elapsed since birth</span></td>
@@ -156,6 +160,80 @@
 			<td><input type="button" ng-click="troughremovecreature(index)" value="Remove"></td>
 		</tr>
 	</table>
+  </div>
+
+	<div class="tableheader slide" ng-class="{'dimmed': !tablevisibility['ImprintCalc']}" ng-click="showhidetable('ImprintCalc')">Imprint Calc</div>
+	<div class="tableslide" ng-show="tablevisibility['ImprintCalc']">
+	<table>
+		<tr>
+			<td style="width: 50%" class="label tooltip">Total # of Imprints:<span class="tooltiptext">Total number of imprints possible for this creature.</span></td>
+			<td>{{creature.imprintTotal | number:0}}</td>
+		</tr>
+		<tr>
+			<td style="width: 50%" class="label tooltip">Imprint Value:<span class="tooltiptext">Imprint value shown in-game (acutal imprint value:{{creature.imprintamount | number:3}}) </span></td>
+			<td>{{creature.imprintamount | number:0}}</td>
+		</tr>
+		<tr>
+			<td style="width: 50%" class="label tooltip">Buffer:<span class="tooltiptext">The amount of time available to perform each imprint. (total buffer available: {{creature.imprintBuffertotal | secondsToDateTime}})</span></td>
+			<td>{{creature.imprintBuffer | secondsToDateTime}}</td>
+		</tr>
+		<tr>
+			<td style="width: 50%" class="label tooltip">Estimated Imprint #:<span class="tooltiptext">Imprint count for the given maturation progress, assuming instant imprinting <br> (raw value: {{creature.imprintcurrent | number:5}}). </span></td>
+			<td>{{creature.imprintcurrenttrunc | number:0}}</td>
+		</tr>
+		<tr>
+			<td style="width: 50%" class="label tooltip">Estimated Imprint Progress:<span class="tooltiptext">Imprint progress for the given maturation progress.</span></td>
+			<td>{{creature.imprintProgress | number:0}}</td>
+		</tr>
+		<tr>
+			<td style="width: 50%" class="label tooltip">Estimated time till next imprint:<span class="tooltiptext">Imprint progress for the given maturation progress.</span></td>
+			<td>{{creature.imprinttimetonext | secondsToDateTime}}</td>
+		</tr>
+		<tr>
+			<td style="width: 50%" class="label tooltip">Weight:<span class="tooltiptext">Weight stat of creature</span></td>
+			<td><input ng-model="creature.finalweight" ng-change="selectweight()" type="number"></td>
+		</tr>
+		<tr>
+			<td style="width: 50%" class="label tooltip">Current Weight:<span class="tooltiptext">Amount of weight the creature can currently carry</span></td>
+			<td><input ng-model="creature.currentweight" ng-change="selectweight()" type="number" step="0.1" min="0" max="creature.finalweight">%</td>
+		</tr>
+		<tr>
+			<td style="width: 50%" class="label tooltip">Current Time left Till Imprint:<span class="tooltiptext">Weight stat of creature</span></td>
+			<td><input ng-model="creature.imprintActualHours" ng-change="Imprintcalc()" type="number" min="0" max="7" style="width: 30px;">:
+					<input ng-model="creature.imprintActualMinutes" ng-change="Imprintcalc()" type="number" min="0" max="59" style="width: 35px;">:
+					<input ng-model="creature.imprintActualSeconds" ng-change="Imprintcalc()" type="number" min="0" max="59" style="width: 35px;">
+		  </td>
+		</tr>
+		<tr>
+			<td style="width: 50%" class="label tooltip">Current Imprint Progress:<span class="tooltiptext">Imprint progress shown in the creatures inventory.</span></td>
+			<td><input ng-model="creature.imprintActualProgress" ng-change="Imprintcalc()" type="number" min="0" max="100" style="width: 50px;">%</td>
+		</tr>
+		<tr>
+			<td style="width: 50%" class="label tooltip">User time:<span class="tooltiptext">Imprint progress for the given maturation progress.</span></td>
+			<td>{{creature.imprintDifferenceDisplay}}</td>
+		</tr>
+		<tr>
+			<td style="width: 50%" class="label tooltip">Imprints to finish:<span class="tooltiptext">Imprint progress for the given maturation progress.</span></td>
+			<td>{{creature.imprintstofinish | number:0}}</td>
+		</tr>
+		<tr>
+			<td style="width: 50%" class="label tooltip">time required to get 100% imprint:<span class="tooltiptext">Imprint progress for the given maturation progress.</span></td>
+			<td>{{creature.imprintTimetofinish | secondsToDateTime}}</td>
+		</tr>
+		<tr>
+			<td style="width: 50%" class="label tooltip">Missed Imprints:<span class="tooltiptext">Imprint progress for the given maturation progress.</span></td>
+			<td>{{creature.imprintMissed | number:5}}</td>
+		</tr>
+		<tr>
+			<td style="width: 50%" class="label tooltip">Imprint Buffer Remaining Total:<span class="tooltiptext">Imprint progress for the given maturation progress.</span></td>
+			<td>{{creature.imprintBufferRemaningTotal | secondsToDateTime}}</td>
+		</tr>
+		<tr>
+			<td style="width: 50%" class="label tooltip">Buffer Remaining:<span class="tooltiptext">Imprint progress for the given maturation progress.</span></td>
+			<td>{{creature.imprintBufferRemaning | secondsToDateTime}}</td>
+		</tr>
+
+	</table>
 </div>
 
 <p class="footer">
@@ -166,5 +244,5 @@
 </p>
 
 </form>
-</div>
+
 </div>
