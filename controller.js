@@ -1947,16 +1947,23 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 		else{
 			creature.imprintDifferenceDisplay=_secondsToDateTime(creature.imprintDifference);
 		}
+		if((creature.imprintDifference+creature.imprintBuffertotal)>0){
+			creature.imprintBufferRemaningTotal=creature.imprintDifference+creature.imprintBuffertotal;
+			creature.imprintBufferRemaning=creature.imprintBufferRemaningTotal/creature.imprintstofinish;
+		}
+		else{
+			creature.imprintBufferRemaningTotal=0;
+			creature.imprintBufferRemaning=0;
+		}
 		creature.imprintstofinish=Math.trunc((100-creature.imprintActualProgress)/creature.imprintamount);
 		creature.imprintTimetofinish=((creature.imprintstofinish-1)*28800)+creature.imprintActualTime;
 		if(creature.imprintTimetofinish > creature.maturationtimeremaining){
 			creature.imprintMissed=Math.ceil(((creature.maturationtimeremaining/28800)-(creature.imprintTimetofinish/28800))*-1);
+			creature.imprintstofinish=creature.imprintstofinish-creature.imprintMissed;
 		}
 		else{
 			creature.imprintMissed=0;
 		}
-		creature.imprintBufferRemaningTotal=creature.imprintDifference+creature.imprintBuffertotal;
-		creature.imprintBufferRemaning=creature.imprintBufferRemaningTotal/creature.imprintstofinish;
 
 		// creature.tempvar=$scope.timeToSeconds("23:59:59");
 		// console.log(creature.imprintactualtime);

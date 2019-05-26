@@ -166,7 +166,7 @@
 	<div class="tableslide" ng-show="tablevisibility['ImprintCalcInstructions']">
 	<table>
 		<tr>
-			<td colspan="2" style="width: 200px; text-align: center;" >For accurate estimations both max weight and current weight MUST be specified.<br>To get the exact weight, spoiled meat(wt:0.1) can be used.<br>For more precision, electronics(wt:0.01) can be used in combination with spoiled meat.</td>
+			<td colspan="2" style="width: 200px; text-align: center;" >For accurate estimations both max weight and current weight MUST be specified.<br>To get the current weight, spoiled meat(wt:0.1) can be placed in it's inventory.<br>For more precision, electronics(wt:0.01) can be used in combination with spoiled meat.</td>
 		</tr>
 	</table>
 	</div>
@@ -178,39 +178,15 @@
 			<td colspan="2" style="width: 200px; text-align: center;" >This Imprint Calculator is a work in progress, some things may not behave as expected or may be changed or removed. <br>For the newest version refresh with "Ctrl+F5"</td>
 		</tr>
 		<tr>
-			<td style="width: 50%" class="label tooltip">Total # of Imprints:<span class="tooltiptext">Total number of imprints possible for this creature.</span></td>
-			<td>{{creature.imprintTotal | number:0}}</td>
-		</tr>
-		<tr>
-			<td style="width: 50%" class="label tooltip">Imprint Value:<span class="tooltiptext">Imprint value shown in-game (acutal imprint value:{{creature.imprintamount | number:3}}) </span></td>
-			<td>{{creature.imprintamount | number:0}}</td>
-		</tr>
-		<tr>
-			<td style="width: 50%" class="label tooltip">Buffer:<span class="tooltiptext">The amount of time available to perform each imprint. (total buffer available: {{creature.imprintBuffertotal | secondsToDateTime}})</span></td>
-			<td>{{creature.imprintBuffer | secondsToDateTime}}</td>
-		</tr>
-		<tr>
-			<td style="width: 50%" class="label tooltip">Estimated Imprint #:<span class="tooltiptext">Imprint count for the given maturation progress, assuming instant imprinting <br> (raw value: {{creature.imprintcurrent | number:5}}). </span></td>
-			<td>{{creature.imprintcurrenttrunc | number:0}}</td>
-		</tr>
-		<tr>
-			<td style="width: 50%" class="label tooltip">Estimated Imprint Progress:<span class="tooltiptext">Imprint progress for the given maturation progress.</span></td>
-			<td>{{creature.imprintProgress | number:0}}</td>
-		</tr>
-		<tr>
-			<td style="width: 50%" class="label tooltip">Estimated time till next imprint:<span class="tooltiptext">time left till next imprint for given maturation.</span></td>
-			<td>{{creature.imprinttimetonext | secondsToDateTime}}</td>
-		</tr>
-		<tr>
-			<td style="width: 50%" class="label tooltip">Weight:<span class="tooltiptext">Maximum weight the creature can carry.</span></td>
+			<td style="width: 50%" class="label tooltip">Maximum Weight:<span class="tooltiptext">The maximum weight the creature can carry once it has reached adulthood.</span></td>
 			<td><input ng-model="creature.finalweight" ng-change="selectweight()" type="number"></td>
 		</tr>
 		<tr>
-			<td style="width: 50%" class="label tooltip">Current Weight:<span class="tooltiptext">Amount of weight the creature can currently carry.</span></td>
+			<td style="width: 50%" class="label tooltip">Current Weight:<span class="tooltiptext">The amount of weight the creature can currently carry.</span></td>
 			<td><input ng-model="creature.currentweight" ng-change="selectweight()" type="number" step="0.1" min="0" max="creature.finalweight"></td>
 		</tr>
 		<tr>
-			<td style="width: 50%" class="label tooltip">Current Time left Till Imprint:<span class="tooltiptext">Time left till next imprint, shown in-game.</span></td>
+			<td style="width: 50%" class="label tooltip">Time left Till Imprint:<span class="tooltiptext">Time left till next imprint, shown in-game.</span></td>
 			<td><input ng-model="creature.imprintActualHours" ng-change="Imprintcalc()" type="number" min="0" max="7" style="width: 30px;">:
 					<input ng-model="creature.imprintActualMinutes" ng-change="Imprintcalc()" type="number" min="0" max="59" style="width: 35px;">:
 					<input ng-model="creature.imprintActualSeconds" ng-change="Imprintcalc()" type="number" min="0" max="59" style="width: 35px;">
@@ -218,33 +194,57 @@
 		</tr>
 		<tr>
 			<td style="width: 50%" class="label tooltip">Current Imprint Progress:<span class="tooltiptext">Imprint progress shown in the creatures inventory.</span></td>
-			<td><input ng-model="creature.imprintActualProgress" ng-change="Imprintcalc()" type="number" min="0" max="100" style="width: 50px;">%</td>
+			<td><input ng-model="creature.imprintActualProgress" ng-change="Imprintcalc()" type="number" min="0" step="1" max="100" style="width: 50px;">%</td>
+		</tr>
+		<tr>
+			<td style="width: 50%" class="label tooltip">Imprint Amount:<span class="tooltiptext">The imprint value shown in-game (acutal imprint value:{{creature.imprintamount | number:3}}) </span></td>
+			<td>{{creature.imprintamount | number:0}}%</td>
+		</tr>
+		<tr>
+			<td style="width: 50%" class="label tooltip">Total Imprint Buffer:<span class="tooltiptext">The total time available to perform imprints</span></td>
+			<td>{{creature.imprintBuffertotal | secondsToDateTime}}</td>
+		</tr>
+		<tr>
+			<td style="width: 50%" class="label tooltip">Per Imprint Buffer:<span class="tooltiptext">The amount of time available to perform each imprint. (total buffer available: {{creature.imprintBuffertotal | secondsToDateTime}})</span></td>
+			<td>{{creature.imprintBuffer | secondsToDateTime}}</td>
+		</tr>
+		<tr>
+			<td style="width: 50%" class="label tooltip">Predicted Imprint #:<span class="tooltiptext">Imprint count for the given maturation progress, assuming instant imprinting <br> (raw value: {{creature.imprintcurrent | number:5}}). </span></td>
+			<td>{{creature.imprintcurrenttrunc | number:0}} / {{creature.imprintTotal | number:0}}</td>
+		</tr>
+		<tr>
+			<td style="width: 50%" class="label tooltip">Predicted Imprint Progress:<span class="tooltiptext">Imprint progress for the given maturation progress.</span></td>
+			<td>{{creature.imprintProgress | number:0}}%</td>
+		</tr>
+		<tr>
+			<td style="width: 50%" class="label tooltip">Predicted time till next imprint:<span class="tooltiptext">time left till next imprint for given maturation.</span></td>
+			<td>{{creature.imprinttimetonext | secondsToDateTime}}</td>
 		</tr>
 		<!-- <tr>
 			<td style="width: 50%" class="label tooltip">User time:<span class="tooltiptext">Imprint progress for the given maturation progress.</span></td>
 			<td>{{creature.imprintDifferenceDisplay}}</td>
 		</tr> -->
 		<tr>
-			<td style="width: 50%" class="label tooltip">Imprints to finish:<span class="tooltiptext">Number of imprints left. dev note:should this exclude missed imprints?</span></td>
+			<td style="width: 50%" class="label tooltip">Imprints to finish:<span class="tooltiptext">Number of imprints remaining.</span></td>
 			<td>{{creature.imprintstofinish | number:0}}</td>
 		</tr>
-		<tr>
-			<td style="width: 50%" class="label tooltip">time required for 100% imprint:<span class="tooltiptext">Time required to achieve 100% imprint (may be removed later)</span></td>
+		<!-- <tr>
+			<td style="width: 50%" class="label tooltip">Time Required for 100% Imprint:<span class="tooltiptext">Time required to achieve 100% imprint (may be removed later)</span></td>
 			<td>{{creature.imprintTimetofinish | secondsToDateTime}}</td>
-		</tr>
+		</tr> -->
 		<tr>
 			<td style="width: 50%" class="label tooltip">Missed Imprints:<span class="tooltiptext">Imprints missed due to exceeding the buffer. (total buffer available: {{creature.imprintBuffertotal | secondsToDateTime}})</span></td>
 			<td>{{creature.imprintMissed | number:0}}</td>
 		</tr>
-		<tr>
-			<td colspan="2" style="width: 200px; text-align: center;" >Items below may output unreliable data!</td>
-		</tr>
 		<!-- <tr>
-			<td style="width: 50%" class="label tooltip">Imprint Buffer Remaining Total:<span class="tooltiptext">Imprint progress for the given maturation progress.</span></td>
-			<td>{{creature.imprintBufferRemaningTotal | secondsToDateTime}}</td>
+			<td colspan="2" style="width: 200px; text-align: center;" >Items below may output unreliable data!</td>
 		</tr> -->
 		<tr>
-			<td style="width: 50%" class="label tooltip">Buffer Remaining:<span class="tooltiptext">The amount of time remaining to perform each imprint. (total buffer available: {{creature.imprintBufferRemaningTotal | secondsToDateTime}})</span></td>
+			<td style="width: 50%" class="label tooltip">Imprint Buffer Remaining Total:<span class="tooltiptext">Imprint progress for the given maturation progress.</span></td>
+			<td>{{creature.imprintBufferRemaningTotal | secondsToDateTime}}</td>
+		</tr>
+		<tr>
+			<td style="width: 50%" class="label tooltip">Per Imprint Buffer Remaining:<span class="tooltiptext">The amount of time remaining to perform each imprint. (total buffer available: {{creature.imprintBufferRemaningTotal | secondsToDateTime}})</span></td>
 			<td>{{creature.imprintBufferRemaning | secondsToDateTime}}</td>
 		</tr>
 
