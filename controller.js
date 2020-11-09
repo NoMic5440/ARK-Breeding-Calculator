@@ -6,11 +6,11 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
   		}
 	};
 
-	$scope.foods={
+	$scope.Defaultfoods={
 
 		'Raw Fish Meat': {
 			food: 25,
-			stack: 20,
+			stack: 40,
 			spoil: 20*60,
 			weight: 0.1,
 			waste: 0
@@ -18,7 +18,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 
 		'Cooked Fish Meat': {
 			food: 12.5,
-			stack: 30,
+			stack: 50,
 			spoil: 30*60,
 			weight: 0.1,
 			waste: 0
@@ -26,7 +26,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 
 		'Raw Meat': {
 			food: 50,
-			stack: 20,
+			stack: 40,
 			spoil: 10*60,
 			weight: 0.1,
 			waste: 0
@@ -34,7 +34,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 
 		'Cooked Meat': {
 			food: 25,
-			stack: 30,
+			stack: 50,
 			spoil: 20*60,
 			weight: 0.1,
 			waste: 25
@@ -64,6 +64,14 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			waste: 0
 		},
 
+		'Vegetables': {
+			food: 40,
+			stack: 100,
+			spoil: 5*60,
+			weight: 0.1,
+			waste: 0
+		},
+
 		'Rare Flower': {
 			food: 60,
 			stack: 100,
@@ -86,23 +94,183 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			spoil: 3*24*60*60,
 			weight: 0.1,
 			waste: 0
-		}
+		},
 
+		'Wyvern Milk': {
+			food: 1200,
+			stack: 1,
+			spoil: 10*60*3,
+			weight: 0.1,
+			waste: 0
+		},
+		
+		'Primal Crystal': {
+			food: 350,
+			stack: 1,
+			spoil: 10800,
+			weight: 1,
+			waste: 0
+		},
+				
+		'Ambergris': {
+			food: 500,
+			stack: 1,
+			spoil: 10*60*2,
+			weight: 5,
+			waste: 0
+		},
+		
+		'Nameless Venom': {
+			food: 400,
+			stack: 1,
+			spoil: 10*60*3,
+			weight: 0.1,
+			waste: 0
+		}
 	}
+	
+	$scope.Primfoods={
+
+		'Raw Fish Meat': {
+			food: 25,
+			stack: 20,
+			spoil: 20*60,
+			weight: 0.1,
+			waste: 0
+		},
+
+		'Cooked Fish Meat': {
+			food: 12.5,
+			stack: 50,
+			spoil: 30*60,
+			weight: 0.1,
+			waste: 0
+		},
+
+		'Raw Meat': {
+			food: 50,
+			stack: 20,
+			spoil: 10*60,
+			weight: 0.1,
+			waste: 0
+		},
+
+		'Cooked Meat': {
+			food: 25,
+			stack: 50,
+			spoil: 20*60,
+			weight: 0.1,
+			waste: 25
+		},
+
+		'Spoiled Meat': {
+			food: 50,
+			stack: 100,
+			spoil: 60*60,
+			weight: 0.1,
+			waste: 0
+		},
+
+		'Mejoberry': {
+			food: 30,
+			stack: 100,
+			spoil: 10*60,
+			weight: 0.1,
+			waste: 0
+		},
+
+		'Berry': {
+			food: 20,
+			stack: 100,
+			spoil: 10*60,
+			weight: 0.1,
+			waste: 0
+		},
+
+		'Vegetables': {
+			food: 40,
+			stack: 100,
+			spoil: 5*60,
+			weight: 0.1,
+			waste: 0
+		},
+
+		'Rare Flower': {
+			food: 60,
+			stack: 100,
+			spoil: 3*24*60*60,
+			weight: 0.15,
+			waste: 0
+		},
+
+		'Chitin': {
+			food: 50,
+			stack: 100,
+			spoil: 9001*9001,
+			weight: 0.01,
+			waste: 0
+		},
+
+		'Kibble': {
+			food: 60,
+			stack: 100,
+			spoil: 3*24*60*60,
+			weight: 0.1,
+			waste: 0
+		},
+		
+		'Wyvern Milk': {
+			food: 1200,
+			stack: 1,
+			spoil: 10*60*3,
+			weight: 0.1,
+			waste: 0
+		},
+		
+		'Primal Crystal': {
+			food: 350,
+			stack: 1,
+			spoil: 10800,
+			weight: 1,
+			waste: 0
+		},
+				
+		'Ambergris': {
+			food: 500,
+			stack: 1,
+			spoil: 10*60*2,
+			weight: 5,
+			waste: 0
+		},
+		
+		'Nameless Venom': {
+			food: 400,
+			stack: 1,
+			spoil: 10*60*3,
+			weight: 0.1,
+			waste: 0
+		}
+	}
+
+	$scope.foods=$scope.Defaultfoods;
 
 	$scope.foodlists={
 		Carnivore: ['Raw Meat', 'Cooked Meat', 'Raw Fish Meat', 'Kibble'],
-		Herbivore: ['Mejoberry', 'Berry', 'Kibble'],
+		Herbivore: ['Mejoberry', 'Berry', 'Vegetables', 'Kibble'],
 		Omnivore: ['Raw Meat', 'Cooked Meat', 'Raw Fish Meat', 'Mejoberry', 'Berry', 'Kibble'],
 		Microraptor: ['Raw Meat', 'Cooked Meat', 'Rare Flower'],
 		Archaeopteryx: ['Chitin'],
 		Carrion: ['Spoiled Meat'],
-		Piscivore: ['Raw Fish Meat', 'Cooked Fish Meat']
+		Piscivore: ['Raw Fish Meat', 'Cooked Fish Meat'],
+		Wyvern: ['Wyvern Milk'],
+		CrystalWyvern: ['Primal Crystal'],
+		Magmasaur: ['Ambergris'],
+		RockDrake: ['Nameless Venom']
 	}
 
-	$scope.foodlist=['Raw Meat', 'Cooked Meat', 'Raw Fish Meat', 'Cooked Fish Meat', 'Mejoberry', 'Berry', 'Kibble', 'Rare Flower', 'Chitin', 'Spoiled Meat'] //Display order
+	$scope.foodlist=['Raw Meat', 'Cooked Meat', 'Raw Fish Meat', 'Cooked Fish Meat', 'Mejoberry', 'Berry', 'Vegetables', 'Kibble', 'Rare Flower', 'Chitin', 'Spoiled Meat', 'Wyvern Milk', 'Primal Crystal', 'Ambergris', 'Nameless Venom'] //Display order
 
-	$scope.foodorder=['Raw Fish Meat', 'Cooked Fish Meat', 'Raw Meat', 'Berry', 'Cooked Meat', 'Mejoberry', 'Kibble', 'Rare Flower', 'Chitin', 'Spoiled Meat'] //In-game order
+	$scope.foodorder=['Raw Fish Meat', 'Cooked Fish Meat', 'Raw Meat', 'Berry', 'Cooked Meat', 'Mejoberry', 'Vegetables', 'Kibble', 'Rare Flower', 'Chitin', 'Spoiled Meat', 'Wyvern Milk', 'Primal Crystal', 'Ambergris', 'Nameless Venom'] //In-game order
 
 	$scope.troughtypes={
 		Normal: 4,
@@ -113,7 +281,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 	/*
 	* Where to locate stat values:
 	*
-	* Note: PrimalItemConsumable_Egg_[Creature]_Fertilized can be PrimalItemConsumable_UnderwaterEgg_[Creature] fo runderwater creatures
+	* Note: PrimalItemConsumable_Egg_[Creature]_Fertilized can be PrimalItemConsumable_UnderwaterEgg_[Creature] for underwater creatures
 	*
 	* basefoodrate: DinoCharacterStatusComponent_BP_[Creature]/BaseFoodConsumionRate
 	* babyfoodrate: DinoCharacterStatusComponent_BP_[Creature]/BabyDinoConsumingFoodRateMultiplier
@@ -125,11 +293,13 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 	* or
 	* gestationspeed: [Creature]_Character_BP/BabyGestationSpeed
 	* gestationspeedmult: [Creature]_Character_BP/ExtraBabyGestationSpeedMultiplier
+	* // = DevKit checked
 	*/
+	
 
 	$scope.creatures={
 
-		Allosaurus: {
+		Allosaurus: { //
 			birthtype: "Incubation",
 			type: "Carnivore",
 			basefoodrate: 0.001852,
@@ -141,8 +311,8 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			eggspeedmult: 3.0,
 			weight: 380.0
 		},
-		
-		Anglerfish: {
+
+		Anglerfish: { //
 			birthtype: "Incubation",
 			type: "Carnivore",
 			basefoodrate: 0.001852,
@@ -154,8 +324,8 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			eggspeedmult: 1.0,
 			weight: 350
 		},
-		
-		Ankylosaurus: {
+
+		Ankylosaurus: { //
 			birthtype: "Incubation",
 			type: "Herbivore",
 			basefoodrate: 0.003156,
@@ -167,8 +337,8 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			eggspeedmult: 1.9,
 			weight: 250
 		},
-		
-		Archaeopteryx: {
+
+		Archaeopteryx: { //
 			birthtype: "Incubation",
 			type: "Archaeopteryx",
 			basefoodrate: 0.001302,
@@ -181,7 +351,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			weight: 30.0
 		},
 
-		Argentavis: {
+		Argentavis: { //
 			birthtype: "Incubation",
 			type: "Carnivore",
 			basefoodrate: 0.001852,
@@ -193,8 +363,8 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			eggspeedmult: 1.7,
 			weight: 400.0
 		},
-		
-		Baryonyx: {
+
+		Baryonyx: { //
 			birthtype: "Incubation",
 			type: "Piscivore",
 			basefoodrate: 0.001543,
@@ -206,34 +376,47 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			eggspeedmult: 2.5,
 			weight: 325.0
 		},
-		
-		Basilosaurus: {
+
+		Basilosaurus: { //
 			birthtype: "Gestation",
 			type: "Carnivore",
 			basefoodrate: 0.002929,
 			babyfoodrate: 25.5,
 			extrababyfoodrate: 20.0,
 			agespeed: 0.000003,
-			agespeedmult: 0.5,
+			agespeedmult: 0.8,
 			gestationspeed: 0.000035,
 			gestationspeedmult: 1.0,
 			weight: 700.0
 		},
-		
-		Beelzebufo: {
-			birthtype: "Gestation",
+
+		Beelzebufo: { //
+			birthtype: "Incubation",
 			type: "Carnivore",
 			basefoodrate: 0.001929,
 			babyfoodrate: 25.5,
 			extrababyfoodrate: 20.0,
 			agespeed: 0.000003,
 			agespeedmult: 2.5,
-			gestationspeed: 0.000035,
-			gestationspeedmult: 1.0,
+			eggspeed: 0.005556,
+			eggspeedmult: 1.0,
 			weight: 160.0
 		},
+		
+		Bloodstalker: { //
+			birthtype: "Incubation",
+			type: "Carnivore",
+			basefoodrate: 0.001543,
+			babyfoodrate: 25.5,
+			extrababyfoodrate: 20.0,
+			agespeed: 0.000003,
+			agespeedmult: 1.7,
+			eggspeed: 0.005556,
+			eggspeedmult: 1.7,
+			weight: 350.0
+		},
 
-		Brontosaurus: {
+		Brontosaurus: { //
 			birthtype: "Incubation",
 			type: "Herbivore",
 			basefoodrate: 0.007716,
@@ -243,10 +426,10 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			agespeedmult: 1.0,
 			eggspeed: 0.005556,
 			eggspeedmult: 1.0,
-			weight: 900.0
+			weight: 1600.0
 		},
-		
-		Bulbdog: {
+
+		Bulbdog: { //
 			birthtype: "Gestation",
 			type: "Omnivore",
 			basefoodrate: 0.000868,
@@ -259,7 +442,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			weight: 120
 		},
 
-		Carbonemys: {
+		Carbonemys: { //
 			birthtype: "Incubation",
 			type: "Herbivore",
 			basefoodrate: 0.003156,
@@ -269,10 +452,10 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			agespeedmult: 4.0,
 			eggspeed: 0.005556,
 			eggspeedmult: 4.0,
-			weight: 250.0
+			weight: 270.0
 		},
 
-		Carnotaurus: {
+		Carnotaurus: { //
 			birthtype: "Incubation",
 			type: "Carnivore",
 			basefoodrate: 0.001852,
@@ -285,7 +468,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			weight: 300.0
 		},
 
-		Castoroides: {
+		Castoroides: { //
 			birthtype: "Gestation",
 			type: "Herbivore",
 			basefoodrate: 0.002314,
@@ -297,8 +480,8 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			gestationspeedmult: 1.0,
 			weight: 300
 		},
-		
-		Chalicotherium: {
+
+		Chalicotherium: { //
 			birthtype: "Gestation",
 			type: "Herbivore",
 			basefoodrate: 0.003156,
@@ -311,20 +494,33 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			weight: 400
 		},
 
-		Compsognathus: {
+		Compsognathus: { //
 			birthtype: "Incubation",
 			type: "Carnivore",
 			basefoodrate: 0.000868,
 			babyfoodrate: 25.5,
 			extrababyfoodrate: 20.0,
 			agespeed: 0.000003,
-			agespeedmult: 1.0,
+			agespeedmult: 4.4,
 			eggspeed: 0.005556,
 			eggspeedmult: 6.0,
 			weight: 25
 		},
+		
+		"Crystal Wyvern": { //Food Check - Primal Crystal 350 Food Value - need more Tests!?
+			birthtype: "Incubation",
+			type: "CrystalWyvern",
+			basefoodrate: 0.000185,
+			babyfoodrate: 19.25,
+			extrababyfoodrate: 6.0,
+			agespeed: 0.000003,
+			agespeedmult: 1.0,
+			eggspeed: 0.005556,
+			eggspeedmult: 1.0,
+			weight: 300
+		},
 
-		Daeodon: {
+		Daeodon: { //
 			birthtype: "Gestation",
 			type: "Carnivore",
 			basefoodrate: 0.01,
@@ -342,8 +538,21 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 				"Cooked Meat": 0
 			}
 		},
+		
+		Deinonychus: { //
+			birthtype: "Incubation",
+			type: "Carnivore",
+			basefoodrate: 0.001543,
+			babyfoodrate: 25.5,
+			extrababyfoodrate: 20,
+			agespeed: 0.000003,
+			agespeedmult: 2.5,
+			eggspeed: 0.005556,
+			eggspeedmult: 1.0,
+			weight: 140.0
+		},
 
-		Dilophosaurus: {
+		Dilophosaurus: { //
 			birthtype: "Incubation",
 			type: "Carnivore",
 			basefoodrate: 0.000868,
@@ -356,7 +565,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			weight: 45
 		},
 
-		Dimetrodon: {
+		Dimetrodon: { //
 			birthtype: "Incubation",
 			type: "Carnivore",
 			basefoodrate: 0.001736,
@@ -369,7 +578,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			weight: 250
 		},
 
-		Dimorphodon: {
+		Dimorphodon: { //
 			birthtype: "Incubation",
 			type: "Carnivore",
 			basefoodrate: 0.001302,
@@ -381,8 +590,21 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			eggspeedmult: 3.7,
 			weight: 50
 		},
+		
+		Diplocaulus: { //
+			birthtype: "Incubation",
+			type: "Carnivore",
+			basefoodrate: 0.001543,
+			babyfoodrate: 25.5,
+			extrababyfoodrate: 20.0,
+			agespeed: 0.000003,
+			agespeedmult: 2.5,
+			eggspeed: 0.005556,
+			eggspeedmult: 4.1,
+			weight: 150.0
+		},
 
-		Diplodocus: {
+		Diplodocus: { //
 			birthtype: "Incubation",
 			type: "Herbivore",
 			basefoodrate: 0.007716,
@@ -395,7 +617,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			weight: 800.0
 		},
 
-		"Direbear": {
+		Direbear: { //
 			birthtype: "Gestation",
 			type: "Omnivore",
 			basefoodrate: 0.003156,
@@ -408,7 +630,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			weight: 650.0
 		},
 
-		"Direwolf": {
+		Direwolf: { //
 			birthtype: "Gestation",
 			type: "Carnivore",
 			basefoodrate: 0.001543,
@@ -421,7 +643,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			weight: 170.0
 		},
 
-		Dodo: {
+		Dodo: { //
 			birthtype: "Incubation",
 			type: "Herbivore",
 			basefoodrate: 0.000868,
@@ -434,7 +656,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			weight: 50.0
 		},
 
-		Doedicurus: {
+		Doedicurus: { //
 			birthtype: "Gestation",
 			type: "Herbivore",
 			basefoodrate: 0.003156,
@@ -446,21 +668,21 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			gestationspeedmult: 1.6,
 			weight: 250.0
 		},
-		
-		Dunkleosteus: {
+
+		Dunkleosteus: { //
 			birthtype: "Gestation",
 			type: "Carnivore",
 			basefoodrate: 0.001852,
 			babyfoodrate: 25.5,
 			extrababyfoodrate: 20.0,
 			agespeed: 0.000003,
-			agespeedmult: 1.0,
+			agespeedmult: 1.125,
 			gestationspeed: 0.000035,
 			gestationspeedmult: 1.0,
 			weight: 910.0
 		},
-		
-		Electrophorus: {
+
+		Electrophorus: { //
 			birthtype: "Gestation",
 			type: "Carnivore",
 			basefoodrate: 0.002929,
@@ -472,21 +694,21 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			gestationspeedmult: 1.0,
 			weight: 150.0
 		},
-		
-		Equus: {
+
+		Equus: { //
 			birthtype: "Gestation",
 			type: "Herbivore",
 			basefoodrate: 0.001929,
 			babyfoodrate: 25.5,
 			extrababyfoodrate: 20.0,
 			agespeed: 0.000003,
-			agespeedmult: 1.6,
+			agespeedmult: 2.0,
 			gestationspeed: 0.000035,
 			gestationspeedmult: 0.6,
 			weight: 350.0
 		},
-		
-		Featherlight: {
+
+		Featherlight: { //
 			birthtype: "Incubation",
 			type: "Carnivore",
 			basefoodrate: 0.000868,
@@ -498,9 +720,22 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			eggspeedmult: 3.0,
 			weight: 70.0
 		},
+		
+		Ferox: { //
+			birthtype: "Gestation",
+			type: "Carnivore",
+			basefoodrate: 0.000868,
+			babyfoodrate: 25.5,
+			extrababyfoodrate: 20.0,
+			agespeed: 0.000003,
+			agespeedmult: 1.0,
+			gestationspeed: 0.000035,
+			gestationspeedmult: 0.8,
+			weight: 55.0
+		},
 
  		// Unsure on this, because the gacha eats so many things.  This may be completely wrong.
-		Gacha: {
+		Gacha: { //
 			birthtype: "Gestation",
 			type: "Omnivore",
 			basefoodrate: 0.01,
@@ -513,7 +748,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			weight: 380.0
 		},
 
-		Gallimimus: {
+		Gallimimus: { //
 			birthtype: "Incubation",
 			type: "Herbivore",
 			basefoodrate: 0.001929,
@@ -523,23 +758,23 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			agespeedmult: 3.5,
 			eggspeed: 0.005556,
 			eggspeedmult: 3.5,
-			weight: 230
+			weight: 270
 		},
 
-		Gasbag: {
+		Gasbag: { //
 			birthtype: "Gestation",
 			type: "Herbivore",
 			basefoodrate: 0.002066,
 			babyfoodrate: 25.5,
 			extrababyfoodrate: 20,
 			agespeed: 0.000003,
-			agespeedmult: 1.0,
+			agespeedmult: 2.0,
 			gestationspeed: 0.000035,
 			gestationspeedmult: 1.0,
-			weight: 4260.0
+			weight: 3000.0
 		},
 
-		Giganotosaurus: {
+		Giganotosaurus: { //
 			birthtype: "Incubation",
 			type: "Carnivore",
 			basefoodrate: 0.002314,
@@ -552,7 +787,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			weight: 700
 		},
 
-		Gigantopithecus: {
+		Gigantopithecus: { //
 			birthtype: "Gestation",
 			type: "Herbivore",
 			basefoodrate: 0.004156,
@@ -564,8 +799,8 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			gestationspeedmult: 1.2,
 			weight: 220.0
 		},
-		
-		Glowtail: {
+
+		Glowtail: { //
 			birthtype: "Incubation",
 			type: "Carnivore",
 			basefoodrate: 0.000868,
@@ -578,7 +813,59 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			weight: 70.0
 		},
 		
-		Iguanodon: {
+		Hesperornis: { //
+			birthtype: "Incubation",
+			type: "Carnivore",
+			basefoodrate: 0.001389,
+			babyfoodrate: 25.5,
+			extrababyfoodrate: 20.0,
+			agespeed: 0.000003,
+			agespeedmult: 3.3,
+			eggspeed: 0.005556,
+			eggspeedmult: 3.3,
+			weight: 70.0
+		},
+		
+		Hyaenodon: { //
+			birthtype: "Gestation",
+			type: "Carnivore",
+			basefoodrate: 0.001543,
+			babyfoodrate: 25.5,
+			extrababyfoodrate: 20.0,
+			agespeed: 0.000003,
+			agespeedmult: 2.0,
+			gestationspeed: 0.000035,
+			gestationspeedmult: 2.0,
+			weight: 170.0
+		},
+		
+		Ichthyornis: { //
+			birthtype: "Incubation",
+			type: "Carnivore",
+			basefoodrate: 0.001543,
+			babyfoodrate: 25.5,
+			extrababyfoodrate: 20.0,
+			agespeed: 0.000003,
+			agespeedmult: 2.5,
+			eggspeed: 0.005556,
+			eggspeedmult: 3.0,
+			weight: 55.0
+		},
+		
+		 Ichthyosaurus: { //
+			birthtype: "Gestation",
+			type: "Carnivore",
+			basefoodrate: 0.001929,
+			babyfoodrate: 25.5,
+			extrababyfoodrate: 20.0,
+			agespeed: 0.000003,
+			agespeedmult: 1.6,
+			gestationspeed: 0.000035,
+			gestationspeedmult: 1.0,
+			weight: 250.0
+		},
+
+		Iguanodon: { //
 			birthtype: "Incubation",
 			type: "Herbivore",
 			basefoodrate: 0.001929,
@@ -590,8 +877,21 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			eggspeedmult: 3.5,
 			weight: 375.0
 		},
+		
+		Jerboa: { //
+			birthtype: "Gestation",
+			type: "Herbivore",
+			basefoodrate: 0.000868,
+			babyfoodrate: 25.5,
+			extrababyfoodrate: 20.0,
+			agespeed: 0.000003,
+			agespeedmult: 4.4,
+			gestationspeed: 0.000035,
+			gestationspeedmult: 3.0,
+			weight: 55.0
+		},
 
-		Kairuku: {
+		Kairuku: { //
 			birthtype: "Incubation",
 			type: "Carnivore",
 			basefoodrate: 0.001389,
@@ -603,8 +903,21 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			eggspeedmult: 3.3,
 			weight: 70
 		},
+		
+		 Kaprosuchus: { //
+			birthtype: "Incubation",
+			type: "Carnivore",
+			basefoodrate: 0.001543,
+			babyfoodrate: 25.5,
+			extrababyfoodrate: 20.0,
+			agespeed: 0.000003,
+			agespeedmult: 2.5,
+			eggspeed: 0.005556,
+			eggspeedmult: 2.5,
+			weight: 140.0
+		},
 
-		Kentrosaurus: {
+		Kentrosaurus: { //
 			birthtype: "Incubation",
 			type: "Herbivore",
 			basefoodrate: 0.005341,
@@ -616,8 +929,34 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			eggspeedmult: 1.8,
 			weight: 500.0
 		},
+		
+		Lystrosaurus: { //
+			birthtype: "Incubation",
+			type: "Herbivore",
+			basefoodrate: 0.000868,
+			babyfoodrate: 25.5,
+			extrababyfoodrate: 20.0,
+			agespeed: 0.000003,
+			agespeedmult: 6.0,
+			eggspeed: 0.005556,
+			eggspeedmult: 6.0,
+			weight: 90.0
+		},
+		
+		Magmasaur: { //Food Check - Ambergris 500 Food Value - need more Tests!?
+			birthtype: "Incubation",
+			type: "Magmasaur",
+			basefoodrate: 0.000385,
+			babyfoodrate: 25.5,
+			extrababyfoodrate: 20.0,
+			agespeed: 0.000003,
+			agespeedmult: 0.5,
+			eggspeed: 0.005556,
+			eggspeedmult: 1.0,
+			weight: 550
+		},
 
-		Mammoth: {
+		Mammoth: { //
 			birthtype: "Gestation",
 			type: "Herbivore",
 			basefoodrate: 0.004133,
@@ -630,8 +969,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			weight: 500
 		},
 
-		// IceJumper
-		Managarmr: {
+		Managarmr: { //
 			birthtype: "Gestation",
 			type: "Carnivore",
 			basefoodrate: 0.001852,
@@ -641,10 +979,36 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			agespeedmult: 1.0,
 			gestationspeed: 0.000035,
 			gestationspeedmult: 2.0,
-			weight: 426.0
+			weight: 300.0
+		},
+		
+		Manta: { //
+			birthtype: "Gestation",
+			type: "Carnivore",
+			basefoodrate: 0.001929,
+			babyfoodrate: 25.5,
+			extrababyfoodrate: 20,
+			agespeed: 0.000003,
+			agespeedmult: 2.5,
+			gestationspeed: 0.000035,
+			gestationspeedmult: 1.0,
+			weight: 200.0
+		},
+		
+		Megachelon: { //
+			birthtype: "Incubation",
+			type: "Omnivore",
+			basefoodrate: 0.010000,
+			babyfoodrate: 25.5,
+			extrababyfoodrate: 20.0,
+			agespeed: 0.000003,
+			agespeedmult: 1.0,
+			eggspeed: 0.005556,
+			eggspeedmult: 1.0,
+			weight: 2500.0
 		},
 
-		Megalania: {
+		Megalania: { //
 			birthtype: "Incubation",
 			type: "Carnivore",
 			basefoodrate: 0.001736,
@@ -657,7 +1021,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			weight: 400.0
 		},
 
-		Megaloceros: {
+		Megaloceros: { //
 			birthtype: "Gestation",
 			type: "Herbivore",
 			basefoodrate: 0.001543,
@@ -670,7 +1034,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			weight: 220.0
 		},
 
-		Megalodon: {
+		Megalodon: { //
 			birthtype: "Gestation",
 			type: "Carnivore",
 			basefoodrate: 0.001852,
@@ -682,8 +1046,8 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			gestationspeedmult: 1.0,
 			weight: 250.0
 		},
-		
-		Megalosaurus: {
+
+		Megalosaurus: { //
 			birthtype: "Incubation",
 			type: "Carnivore",
 			basefoodrate: 0.001852,
@@ -695,8 +1059,8 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			eggspeedmult: 3.0,
 			weight: 300.0
 		},
-		
-		Megatherium: {
+
+		Megatherium: { //
 			birthtype: "Gestation",
 			type: "Omnivore",
 			basefoodrate: 0.003156,
@@ -708,8 +1072,8 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			gestationspeedmult: 1.0,
 			weight: 725.0
 		},
-		
-		Mesopithecus: {
+
+		Mesopithecus: { //
 			birthtype: "Gestation",
 			type: "Herbivore",
 			basefoodrate: 0.000868,
@@ -722,7 +1086,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			weight: 70.0
 		},
 
-		Microraptor: {
+		Microraptor: { //
 			birthtype: "Incubation",
 			type: "Microraptor",
 			basefoodrate: 0.000868,
@@ -734,8 +1098,8 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			eggspeedmult: 3.5,
 			weight: 45.0
 		},
-		
-		Morellatops: {
+
+		Morellatops: { //
 			birthtype: "Incubation",
 			type: "Herbivore",
 			basefoodrate: 0.005341,
@@ -748,20 +1112,20 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			weight: 440.0
 		},
 
-		Mosasaurus: {
+		Mosasaurus: { //
 			birthtype: "Gestation",
 			type: "Carnivore",
 			basefoodrate: 0.005,
 			babyfoodrate: 25.5,
 			extrababyfoodrate: 20.0,
 			agespeed: 0.000003,
-			agespeedmult: 0.33,
+			agespeedmult: 0.5,
 			gestationspeed: 0.000035,
 			gestationspeedmult: 1.0,
 			weight: 1300.0
 		},
-		
-		Moschops: {
+
+		Moschops: { //
 			birthtype: "Incubation",
 			type: "Omnivore",
 			basefoodrate: 0.001736,
@@ -774,7 +1138,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			weight: 200.0
 		},
 
-		Otter: {
+		Otter: { //
 			birthtype: "Gestation",
 			type: "Piscivore",
 			basefoodrate: 0.002314,
@@ -784,10 +1148,10 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			agespeedmult: 4.4,
 			gestationspeed: 0.000035,
 			gestationspeedmult: 1.0,
-			weight: 40.0
+			weight: 30.0
 		},
 
-		Oviraptor: {
+		Oviraptor: { //
 			birthtype: "Incubation",
 			type: "Carnivore",
 			basefoodrate: 0.001302,
@@ -800,7 +1164,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			weight: 100.0
 		},
 
-		Ovis: {
+		Ovis: { //
 			birthtype: "Gestation",
 			type: "Herbivore",
 			basefoodrate: 0.003156,
@@ -813,7 +1177,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			weight: 90
 		},
 
-		Pachycephalosaurus: {
+		Pachycephalosaurus: { //
 			birthtype: "Incubation",
 			type: "Herbivore",
 			basefoodrate: 0.001543,
@@ -825,8 +1189,8 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			eggspeedmult: 3.5,
 			weight: 150.0
 		},
-		
-		Pachyrhinosaurus: {
+
+		Pachyrhinosaurus: { //
 			birthtype: "Incubation",
 			type: "Herbivore",
 			basefoodrate: 0.003156,
@@ -839,7 +1203,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			weight: 365.0
 		},
 
-		Paraceratherium: {
+		Paraceratherium: { //
 			birthtype: "Gestation",
 			type: "Herbivore",
 			basefoodrate: 0.0035,
@@ -849,10 +1213,10 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			agespeedmult: 1.0,
 			gestationspeed: 0.000035,
 			gestationspeedmult: 1.0,
-			weight: 500.0
+			weight: 850.0
 		},
 
-		Parasaurolophus: {
+		Parasaurolophus: { //
 			birthtype: "Incubation",
 			type: "Herbivore",
 			basefoodrate: 0.001929,
@@ -862,10 +1226,10 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			agespeedmult: 3.5,
 			eggspeed: 0.005556,
 			eggspeedmult: 3.5,
-			weight: 255.0
+			weight: 480.0
 		},
-		
-		Pegomastax: {
+
+		Pegomastax: { //
 			birthtype: "Incubation",
 			type: "Herbivore",
 			basefoodrate: 0.000868,
@@ -878,7 +1242,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			weight: 55.0
 		},
 
-		Pelagornis: {
+		Pelagornis: { //
 			birthtype: "Incubation",
 			type: "Piscivore",
 			basefoodrate: 0.001543,
@@ -889,35 +1253,35 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			eggspeed: 0.005556,
 			eggspeedmult: 3.0,
 			weight: 150
-		}, 
+		},
 
-		Phiomia: {
+		Phiomia: { //
 			birthtype: "Gestation",
 			type: "Herbivore",
 			basefoodrate: 0.003156,
 			babyfoodrate: 25.5,
 			extrababyfoodrate: 20.0,
 			agespeed: 0.000003,
-			agespeedmult: 0.8,
+			agespeedmult: 1.9,
 			gestationspeed: 0.000035,
 			gestationspeedmult: 0.8,
 			weight: 200.0
 		},
 
-		Plesiosaurus: {
+		Plesiosaurus: { //
 			birthtype: "Gestation",
 			type: "Carnivore",
 			basefoodrate: 0.003858,
 			babyfoodrate: 25.5,
 			extrababyfoodrate: 20.0,
 			agespeed: 0.000003,
-			agespeedmult: 0.5,
+			agespeedmult: 0.8,
 			gestationspeed: 0.000035,
 			gestationspeedmult: 1.0,
 			weight: 800.0
 		},
 
-		Procoptodon: {
+		Procoptodon: { //
 			birthtype: "Gestation",
 			type: "Herbivore",
 			basefoodrate: 0.001929,
@@ -927,10 +1291,10 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			agespeedmult: 2.0,
 			gestationspeed: 0.000035,
 			gestationspeedmult: 2.0,
-			weight: 450.0
+			weight: 550.0
 		},
 
-		Pteranodon: {
+		Pteranodon: { //
 			birthtype: "Incubation",
 			type: "Carnivore",
 			basefoodrate: 0.001543,
@@ -940,10 +1304,10 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			agespeedmult: 2.5,
 			eggspeed: 0.005556,
 			eggspeedmult: 3.0,
-			weight: 150.0
+			weight: 120.0
 		},
-		
-		Purlovia: {
+
+		Purlovia: { //
 			birthtype: "Gestation",
 			type: "Carnivore",
 			basefoodrate: 0.001543,
@@ -956,20 +1320,20 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			weight: 400.0
 		},
 
-		Quetzalcoatlus: {
+		Quetzalcoatlus: { //
 			birthtype: "Incubation",
 			type: "Carnivore",
 			basefoodrate: 0.0035,
 			babyfoodrate: 25.5,
 			extrababyfoodrate: 20.0,
 			agespeed: 0.000003,
-			agespeedmult: 0.5,
+			agespeedmult: 0.7,
 			eggspeed: 0.005556,
 			eggspeedmult: 0.3,
-			weight: 820
+			weight: 800
 		},
 
-		Raptor: {
+		Raptor: { //
 			birthtype: "Incubation",
 			type: "Carnivore",
 			basefoodrate: 0.001543,
@@ -981,8 +1345,8 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			eggspeedmult: 2.5,
 			weight: 140.0
 		},
-		
-		Ravager: {
+
+		Ravager: { //
 			birthtype: "Gestation",
 			type: "Carnivore",
 			basefoodrate: 0.001543,
@@ -995,7 +1359,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			weight: 500.0
 		},
 
-		Rex: {
+		Rex: { //
 			birthtype: "Incubation",
 			type: "Carnivore",
 			basefoodrate: 0.002314,
@@ -1008,7 +1372,20 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			weight: 500
 		},
 		
-		"Roll Rat": {
+		"Rock Drake": { //Food Check - Nameless Venom 400 Food Value - need more Tests!?
+			birthtype: "Incubation",
+			type: "RockDrake",
+			basefoodrate: 0.000185,
+			babyfoodrate: 25.5,
+			extrababyfoodrate: 20.0,
+			agespeed: 0.000003,
+			agespeedmult: 1.0,
+			eggspeed: 0.005556,
+			eggspeedmult: 0.8,
+			weight: 400.0
+		},
+
+		"Roll Rat": { //
 			birthtype: "Gestation",
 			type: "Herbivore",
 			basefoodrate: 0.003156,
@@ -1021,7 +1398,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			weight: 400.0
 		},
 
-		Sabertooth: {
+		Sabertooth: { //
 			birthtype: "Gestation",
 			type: "Carnivore",
 			basefoodrate: 0.001543,
@@ -1034,7 +1411,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			weight: 200.0
 		},
 
-		Sarcosuchus: {
+		Sarcosuchus: { //
 			birthtype: "Incubation",
 			type: "Carnivore",
 			basefoodrate: 0.001578,
@@ -1046,8 +1423,8 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			eggspeedmult: 2.0,
 			weight: 300.0
 		},
-		
-		Shinehorn: {
+
+		Shinehorn: { //
 			birthtype: "Gestation",
 			type: "Herbivore",
 			basefoodrate: 0.000868,
@@ -1060,21 +1437,20 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			weight: 100.0
 		},
 
-		// Owl
-		"Snow Owl": {
+		"Snow Owl": { //
 			birthtype: "Incubation",
 			type: "Carnivore",
 			basefoodrate: 0.01,
-			babyfoodrate: 25.5, 
+			babyfoodrate: 4.72,
 			extrababyfoodrate: 20,
 			agespeed: 0.000003,
 			agespeedmult: 1.7,
 			eggspeed: 0.005556,
 			eggspeedmult: 1.7,
-			weight: 690.0
+			weight: 375.0
 		},
 
-		Spinosaurus: {
+		Spinosaurus: { //
 			birthtype: "Incubation",
 			type: "Carnivore",
 			basefoodrate: 0.002066,
@@ -1087,7 +1463,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			weight: 350.0
 		},
 
-		Stegosaurus: {
+		Stegosaurus: { //
 			birthtype: "Incubation",
 			type: "Herbivore",
 			basefoodrate: 0.005341,
@@ -1100,7 +1476,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			weight: 500.0
 		},
 
-		Tapejara: {
+		Tapejara: { //
 			birthtype: "Incubation",
 			type: "Carnivore",
 			basefoodrate: 0.001543,
@@ -1113,20 +1489,20 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			weight: 280.0
 		},
 
-		"Terror Bird": {
+		"Terror Bird": { //
 			birthtype: "Incubation",
 			type: "Carnivore",
 			basefoodrate: 0.001578,
 			babyfoodrate: 25.5,
 			extrababyfoodrate: 20.0,
 			agespeed: 0.000003,
-			agespeedmult: 2,
+			agespeedmult: 2.0,
 			eggspeed: 0.005556,
 			eggspeedmult: 2.5,
 			weight: 120.0
 		},
 
-		Therizinosaurus: {
+		Therizinosaurus: { //
 			birthtype: "Incubation",
 			type: "Herbivore",
 			basefoodrate: 0.002314,
@@ -1138,8 +1514,8 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			eggspeedmult: 3.0,
 			weight: 365.0
 		},
-		
-		"Thorny Dragon": {
+
+		"Thorny Dragon": { //
 			birthtype: "Incubation",
 			type: "Carnivore",
 			basefoodrate: 0.001543,
@@ -1152,7 +1528,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			weight: 300.0
 		},
 
-		Thylacoleo: {
+		Thylacoleo: { //
 			birthtype: "Gestation",
 			type: "Carnivore",
 			basefoodrate: 0.001543,
@@ -1165,7 +1541,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			weight: 400.0,
 		},
 
-		Triceratops: {
+		Triceratops: { //
 			birthtype: "Incubation",
 			type: "Herbivore",
 			basefoodrate: 0.003156,
@@ -1177,8 +1553,8 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			eggspeedmult: 2.0,
 			weight: 365.0
 		},
-		
-		Troodon: {
+
+		Troodon: { //
 			birthtype: "Incubation",
 			type: "Carnivore",
 			basefoodrate: 0.001543,
@@ -1191,21 +1567,33 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			weight: 140.0
 		},
 		
-		Tusoteuthis: {
+		Tropeognathus: { //
+			birthtype: "Incubation",
+			type: "Carnivore",
+			basefoodrate: 0.001543,
+			babyfoodrate: 25.5,
+			extrababyfoodrate: 20.0,
+			agespeed: 0.000003,
+			agespeedmult: 1.7,
+			eggspeed: 0.005556,
+			eggspeedmult: 3.0,
+			weight: 340.0
+		},
+
+		Tusoteuthis: { //
 			birthtype: "Incubation",
 			type: "Carnivore",
 			basefoodrate: 0.005,
 			babyfoodrate: 25.5,
 			extrababyfoodrate: 20.0,
 			agespeed: 0.000003,
-			agespeedmult: 0.33,
+			agespeedmult: 0.5,
 			eggspeed: 0.005556,
 			eggspeedmult: 1.0,
 			weight: 800.0
 		},
 
-		// Spindles
-		Velonasaur: {
+		Velonasaur: { //
 			birthtype: "Incubation",
 			type: "Carnivore",
 			basefoodrate: 0.001543,
@@ -1215,10 +1603,10 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			agespeedmult: 2.0,
 			eggspeed: 0.005556,
 			eggspeedmult: 4.4,
-			weight: 461.5
+			weight: 325.0
 		},
-		
-		Vulture: {
+
+		Vulture: { //
 			birthtype: "Incubation",
 			type: "Carrion",
 			basefoodrate: 0.001302,
@@ -1231,20 +1619,33 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			weight: 50
 		},
 
-		"Woolly Rhino": {
+		"Woolly Rhino": { //
 			birthtype: "Gestation",
 			type: "Herbivore",
 			basefoodrate: 0.003156,
 			babyfoodrate: 25.5,
 			extrababyfoodrate: 20.0,
 			agespeed: 0.000003,
-			agespeedmult: 2.0,
+			agespeedmult: 1.6,
 			gestationspeed: 0.000035,
 			gestationspeedmult: 2.0,
 			weight: 750.0
 		},
 		
-		Yutyrannus: {
+		Wyvern: { //Food Check - Wyvern Milk 1200 Food Value - need more Tests!?
+			birthtype: "Incubation",
+			type: "Wyvern",
+			basefoodrate: 0.000185,
+			babyfoodrate: 13.0,
+			extrababyfoodrate: 3.0,
+			agespeed: 0.000003,
+			agespeedmult: 1.0,
+			eggspeed: 0.005556,
+			eggspeedmult: 1.0,
+			weight: 400.0
+		},
+
+		Yutyrannus: { //
 			birthtype: "Incubation",
 			type: "Carnivore",
 			basefoodrate: 0.002314,
@@ -1378,6 +1779,15 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 			$scope.switchcreature();
 		}
 	}
+	
+	$scope.changeStackSize=function() {
+		if($scope.settings.stackSize){
+			$scope.foods=$scope.Primfoods;
+		} else {
+			$scope.foods=$scope.Defaultfoods;
+		}
+		$scope.troughcalc();
+	}
 
 	$scope.selectsettings=function() {
 		settings=$scope.settings;
@@ -1399,31 +1809,24 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 	/*$scope.selectcreature=function() {
 		creature=$scope.creature;
 		creaturedata=$scope.creatures[creature.name];
-
 		creature.searchname=creature.name; //Ensure the searchname is kept up to date
-
 		creature.maturationtime=1/creaturedata.agespeed/creaturedata.agespeedmult/$scope.settings.maturationspeed;
 		creature.babytime=creature.maturationtime/10;
-
 		if (creaturedata.birthtype=="Incubation") {
 			creature.birthtime=100/creaturedata.eggspeed/creaturedata.eggspeedmult/$scope.settings.hatchspeed;
 			creature.birthlabel="Incubation";
 		}
-
 		if (creaturedata.birthtype=="Gestation") {
 			creature.birthtime=1/creaturedata.gestationspeed/creaturedata.gestationspeedmult/$scope.settings.hatchspeed;
-			creature.birthlabel="Gestation";		
+			creature.birthlabel="Gestation";
 		}
-
 		creature.finalweight=creaturedata.weight;
 		creature.currentweight=0;
 		creature.maxfoodrate=creaturedata.basefoodrate*creaturedata.babyfoodrate*creaturedata.extrababyfoodrate*$scope.settings.consumptionspeed;
 		creature.minfoodrate=$scope.settings.baseminfoodrate*creaturedata.babyfoodrate*creaturedata.extrababyfoodrate*$scope.settings.consumptionspeed;
 		creature.foodratedecay=(creature.maxfoodrate-creature.minfoodrate)/creature.maturationtime;
 		creature.desiredbabybuffer=1;
-
 		$scope.foodunit=$scope.foodlists[creaturedata.type][0];
-
 		$scope.selectweight();
 		$scope.totalfoodcalc();
 		$scope.babybuffercalc();
@@ -1453,7 +1856,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 
 		if (creaturedata.birthtype=="Gestation") {
 			creature.birthtime=1/creaturedata.gestationspeed/creaturedata.gestationspeedmult/$scope.settings.hatchspeed;
-			creature.birthlabel="Gestation";		
+			creature.birthlabel="Gestation";
 		}
 
 		creature.maxfoodrate=creaturedata.basefoodrate*creaturedata.babyfoodrate*creaturedata.extrababyfoodrate*$scope.settings.consumptionspeed;
@@ -1561,7 +1964,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 
 		//Final Buffer Calc
 		creature.lasthandfeed=Math.max(0, creature.maturationtime*(creature.lasthandfeedmaturation-creature.maturationprogress));
-		
+
 		//Desired Buffer Calc
 		creature.timeuntildesiredbabybuffer=Math.max(0, creature.maturationtime*(creature.timeuntildesiredbabybuffermaturation-creature.maturationprogress));
 		//alert("Desired buffer "+$scope.iterations);
@@ -1806,7 +2209,7 @@ var breedingController=angular.module('breedingControllers', []).controller('bre
 				if (troughcreatures[i].foodrate<troughcreatures[i].minfoodrate) {
 					continue; //Creature is adult
 				}
-				
+
 				troughcreatures[i].foodrate-=troughcreatures[i].foodratedecay;
 				troughcreatures[i].hunger+=troughcreatures[i].foodrate;
 
